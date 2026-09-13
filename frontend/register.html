@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Student Registration | UniMate AI</title>
+
+<!-- Existing project fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f8fc, #eaf2fb);
+        color: #111827;
+    }
+
+    .page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+    }
+
+    .register-container {
+        width: 100%;
+        max-width: 1050px;
+        display: grid;
+        grid-template-columns: 0.9fr 1.4fr;
+        background: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(15, 23, 42, 0.12);
+    }
+
+    /* LEFT SIDE */
+    .welcome-section {
+        background: #0b2a4a;
+        color: white;
+        padding: 45px 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 85px;
+        height: 85px;
+        object-fit: contain;
+        background: white;
+        border-radius: 50%;
+        padding: 8px;
+        margin-bottom: 25px;
+    }
+
+    .welcome-section h1 {
+        font-family: "Fraunces", serif;
+        font-size: 38px;
+        line-height: 1.15;
+        margin-bottom: 15px;
+    }
+
+    .welcome-section h1 span {
+        color: #5da9e9;
+    }
+
+    .welcome-section p {
+        color: #d9e7f5;
+        line-height: 1.7;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .features {
+        list-style: none;
+    }
+
+    .features li {
+        margin: 13px 0;
+        color: #e9f3fc;
+        font-size: 14px;
+    }
+
+    .features li::before {
+        content: "✓";
+        color: #63b3ed;
+        font-weight: 700;
+        margin-right: 10px;
+    }
+
+    /* RIGHT SIDE */
+    .form-section {
+        padding: 40px 45px;
+    }
+
+    .form-header {
+        margin-bottom: 25px;
+    }
+
+    .form-header h2 {
+        font-size: 28px;
+        color: #0b2a4a;
+        margin-bottom: 7px;
+    }
+
+    .form-header p {
+        color: #64748b;
+        font-size: 14px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 17px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #334155;
+        margin-bottom: 7px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 12px 13px;
+        border: 1px solid #d7dee8;
+        border-radius: 8px;
+        outline: none;
+        background: #ffffff;
+        font-family: inherit;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #1769aa;
+        box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.1);
+    }
+
+    .password-wrapper {
+        position: relative;
+    }
+
+    .password-wrapper input {
+        padding-right: 75px;
+    }
+
+    .show-password {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        color: #1769aa;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .register-btn {
+        grid-column: 1 / -1;
+        border: none;
+        border-radius: 8px;
+        padding: 14px;
+        background: #1769aa;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-top: 5px;
+    }
+
+    .register-btn:hover {
+        background: #0f558d;
+    }
+
+    .login-link {
+        grid-column: 1 / -1;
+        text-align: center;
+        color: #64748b;
+        font-size: 14px;
+        margin-top: 2px;
+    }
+
+    .login-link a {
+        color: #1769aa;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+
+    .back-home {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .back-home a {
+        color: #64748b;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .back-home a:hover {
+        color: #1769aa;
+    }
+
+    .required {
+        color: #dc2626;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+        .register-container {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+        }
+
+        .welcome-section {
+            padding: 35px 30px;
+        }
+
+        .welcome-section h1 {
+            font-size: 32px;
+        }
+
+        .features {
+            display: none;
+        }
+
+        .form-section {
+            padding: 35px 30px;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .page {
+            padding: 15px;
+        }
+
+        .form-section {
+            padding: 28px 20px;
+        }
+
+        .welcome-section {
+            padding: 30px 20px;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .full-width,
+        .register-btn,
+        .login-link {
+            grid-column: auto;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+        }
+
+        .welcome-section h1 {
+            font-size: 28px;
+        }
+
+        .form-header h2 {
+            font-size: 24px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+<div class="register-container">
+
+    <!-- LEFT / WELCOME -->
+    <section class="welcome-section">
+
+        <!-- Change this filename only if your logo has a different name -->
+        <img
+            src="images/Sir Syed Case Institute.jpg"
+            alt="University Logo"
+            class="logo"
+        >
+
+        <h1>
+            Welcome to<br> <span style="color: rgb(212, 16, 16);">Sir Syed Case Institute of Technology</span><br><span>UniMate AI</span>
+        </h1>
+
+        <p>
+            Create your student account and access your university
+            services, academic information and AI-powered student
+            assistance from one place.
+        </p>
+
+        <ul class="features">
+            <li>Secure student account</li>
+            <li>Academic information in one place</li>
+            <li>AI-powered student assistance</li>
+            <li>Easy access to university services</li>
+        </ul>
+
+    </section>
+
+
+    <!-- RIGHT / FORM -->
+    <section class="form-section">
+
+        <div class="form-header">
+            <h2>Create Student Account</h2>
+            <p>Fill in your information to register.</p>
+        </div>
+
+        <form id="registerForm">
+
+            <div class="form-grid">
+
+                <!-- FULL NAME -->
+                <div class="form-group full-width">
+                    <label for="fullName">
+                        Full Name <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+
+                <!-- REGISTRATION NUMBER -->
+                <div class="form-group">
+                    <label for="registrationNumber">
+                        Registration Number <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registrationNumber"
+                        name="registrationNumber"
+                        placeholder="e.g. 2023-CS-001"
+                        required
+                    >
+                </div>
+
+
+                <!-- UNIVERSITY EMAIL -->
+                <div class="form-group">
+                    <label for="universityEmail">
+                        University Email <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="universityEmail"
+                        name="universityEmail"
+                        placeholder="your@university.edu"
+                        required
+                    >
+                </div>
+
+
+                <!-- PERSONAL EMAIL -->
+                <div class="form-group">
+                    <label for="personalEmail">
+                        Personal Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="personalEmail"
+                        name="personalEmail"
+                        placeholder="your@gmail.com"
+                    >
+                </div>
+
+
+                <!-- PHONE -->
+                <div class="form-group">
+                    <label for="phoneNumber">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="03XX-XXXXXXX"
+                    >
+                </div>
+
+
+                <!-- PROGRAM -->
+                <div class="form-group">
+                    <label for="program">
+                        Program <span class="required">*</span>
+                    </label>
+
+                    <select id="program" name="program" required>
+                        <option value="">Select Program</option>
+                        <option value="BS Computer Science">BS Computer Science</option>
+                        <option value="BS Software Engineering">BS Software Engineering</option>
+                        <option value="BS Information Technology">BS Information Technology</option>
+                        <option value="BS Artificial Intelligence">BS Artificial Intelligence</option>
+                        <option value="BS Data Science">BS Data Science</option>
+                    </select>
+                </div>
+
+
+                <!-- DEPARTMENT -->
+                <div class="form-group">
+                    <label for="department">
+                        Department <span class="required">*</span>
+                    </label>
+
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Data Science">Data Science</option>
+                    </select>
+                </div>
+
+
+                <!-- SEMESTER -->
+                <div class="form-group">
+                    <label for="semester">
+                        Semester <span class="required">*</span>
+                    </label>
+
+                    <select id="semester" name="semester" required>
+                        <option value="">Select Semester</option>
+                        <option value="1">1st Semester</option>
+                        <option value="2">2nd Semester</option>
+                        <option value="3">3rd Semester</option>
+                        <option value="4">4th Semester</option>
+                        <option value="5">5th Semester</option>
+                        <option value="6">6th Semester</option>
+                        <option value="7">7th Semester</option>
+                        <option value="8">8th Semester</option>
+                    </select>
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+                    <label for="password">
+                        Password <span class="required">*</span>
+                    </label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Minimum 8 characters"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword('password', this)"
+                        >
+                            Show
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="form-group">
+                    <label for="confirmPassword">
+                        Confirm Password <span class="required">*</span>
+                    </label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Re-enter password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword('confirmPassword', this)"
+                        >
+                            Show
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- REGISTER -->
+                <button
+                    type="submit"
+                    class="register-btn"
+                >
+                    Create Student Account
+                </button>
+
+
+                <!-- LOGIN -->
+                <div class="login-link">
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </div>
+
+            </div>
+
+        </form>
+
+        <div class="back-home">
+            <a href="index.html">← Back to University Home</a>
+        </div>
+
+    </section>
+
+</div>
+
+
+</div>
+
+<script>
+
+    function togglePassword(inputId, button) {
+
+        const input = document.getElementById(inputId);
+
+        if (input.type === "password") {
+            input.type = "text";
+            button.textContent = "Hide";
+        } else {
+            input.type = "password";
+            button.textContent = "Show";
+        }
+
+    }
+
+</script>
+
+<script src="script/auth.js"></script>
+
+</body>
+</html>

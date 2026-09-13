@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UniMate AI — Your University. Your Assistant. Your Future.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ======================= HEADER / NAVIGATION ======================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="images/university-logo.png" alt="University logo" class="brand-logo" onerror="this.style.display='none'">
+      <span class="brand-text">
+        <span class="brand-name">UniMate <span class="brand-ai">AI</span></span>
+        <span class="brand-sub">Demo Platform</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link is-active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#academics" class="nav-link">Academics</a>
+      <a href="#admissions" class="nav-link">Admissions</a>
+      <a href="#notices" class="nav-link">Notices</a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-ghost">Student Login</a>
+      <a href="register.html" class="btn btn-primary">Register</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker">A demo built for Sir Syed CASE-IT University, Islamabad</p>
+      <h1 class="hero-title">Your University.<br>Your Assistant.<br>Your Future.</h1>
+      <p class="hero-text">
+        UniMate AI brings academic records, campus information and a generative
+        AI assistant into one place — so a student can check attendance,
+        finish an assignment, and plan a career, without switching apps.
+      </p>
+      <div class="hero-actions">
+        <a href="#academics" class="btn btn-primary btn-lg">Explore University</a>
+        <a href="login.html" class="btn btn-outline btn-lg">Student Login</a>
+        <a href="register.html" class="btn btn-text btn-lg">Register &rsaquo;</a>
+      </div>
+      <p class="hero-disclaimer">
+        Demo project. Not an official university system. All student names,
+        courses and notices shown here are sample data.
+      </p>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 480 460" class="flow-svg">
+        <line x1="90" y1="90" x2="240" y2="210" class="flow-line"/>
+        <line x1="240" y1="210" x2="390" y2="90" class="flow-line"/>
+        <line x1="240" y1="210" x2="240" y2="340" class="flow-line"/>
+        <line x1="240" y1="340" x2="120" y2="410" class="flow-line"/>
+        <line x1="240" y1="340" x2="360" y2="410" class="flow-line"/>
+
+        <g class="flow-node flow-node-a">
+          <circle cx="90" cy="90" r="46"/>
+          <text x="90" y="85">Courses</text>
+          <text x="90" y="102">&amp; Grades</text>
+        </g>
+        <g class="flow-node flow-node-a">
+          <circle cx="390" cy="90" r="46"/>
+          <text x="390" y="85">Attendance</text>
+          <text x="390" y="102">&amp; Notices</text>
+        </g>
+        <g class="flow-node flow-node-core">
+          <circle cx="240" cy="210" r="58"/>
+          <text x="240" y="204">UniMate</text>
+          <text x="240" y="223">AI</text>
+        </g>
+        <g class="flow-node flow-node-b">
+          <circle cx="240" cy="340" r="50"/>
+          <text x="240" y="334">Daily</text>
+          <text x="240" y="352">Priorities</text>
+        </g>
+        <g class="flow-node flow-node-c">
+          <circle cx="120" cy="410" r="40"/>
+          <text x="120" y="415">Study Plan</text>
+        </g>
+        <g class="flow-node flow-node-c">
+          <circle cx="360" cy="410" r="40"/>
+          <text x="360" y="415">Roadmap</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= STATS STRIP ======================= -->
+<section class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">5</span><span class="stat-label">Departments (demo)</span></div>
+    <div class="stat"><span class="stat-num">24</span><span class="stat-label">Courses (demo)</span></div>
+    <div class="stat"><span class="stat-num">1</span><span class="stat-label">Student profile, one database</span></div>
+    <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Assistant built in, not bolted on</span></div>
+  </div>
+</section>
+
+<!-- ======================= ABOUT / THREE PORTALS ======================= -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <h2 class="section-title">One platform, three connected parts</h2>
+    <p class="section-lead">
+      UniMate AI is not a static university website. It is a working portal
+      where public information, a student's private academic record, and a
+      generative AI layer read from the same data.
+    </p>
+
+    <div class="portal-grid">
+      <article class="portal-card portal-card-university">
+        <h3>University Portal</h3>
+        <p>Departments, programs, faculty, admissions, campus information and contact details — open to every visitor.</p>
+        <a href="#academics" class="card-link">View academics</a>
+      </article>
+      <article class="portal-card portal-card-student">
+        <h3>Student Portal</h3>
+        <p>Courses, timetable, assignments, attendance, grades and GPA — a private dashboard for each registered student.</p>
+        <a href="login.html" class="card-link">Go to student login</a>
+      </article>
+      <article class="portal-card portal-card-ai">
+        <h3>Generative AI Layer</h3>
+        <p>An AI assistant that reads a student's own courses, attendance and goals, then gives advice built for that student.</p>
+        <a href="#" class="card-link">AI Assistant — coming in a later step</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ACADEMICS ======================= -->
+<section class="section section-tint" id="academics">
+  <div class="section-inner">
+    <h2 class="section-title">Academics</h2>
+    <p class="section-lead">Sample departments and programs used throughout this demo.</p>
+
+    <div class="dept-grid">
+      <div class="dept-item"><h4>Computer Science</h4><p>BS, MS — Software Engineering, AI, Data Science tracks</p></div>
+      <div class="dept-item"><h4>Electrical Engineering</h4><p>BS, MS — Power, Electronics, Telecom</p></div>
+      <div class="dept-item"><h4>Business Administration</h4><p>BBA, MBA — Finance, Marketing, HR</p></div>
+      <div class="dept-item"><h4>Mathematics</h4><p>BS — Applied &amp; Computational Mathematics</p></div>
+      <div class="dept-item"><h4>Social Sciences</h4><p>BS — Psychology, Economics</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= NOTICES + EVENTS ======================= -->
+<section class="section" id="notices">
+  <div class="section-inner">
+    <div class="split-heading">
+      <h2 class="section-title">Notices</h2>
+      <span class="badge badge-demo">Demo data</span>
+    </div>
+
+    <ul class="notice-list">
+      <li>
+        <span class="notice-date">10 Sep</span>
+        <span class="notice-title">Mid-semester result sheets released for Fall 2026</span>
+        <span class="badge badge-academic">Academic</span>
+      </li>
+      <li>
+        <span class="notice-date">08 Sep</span>
+        <span class="notice-title">Library extended hours during exam week</span>
+        <span class="badge badge-general">General</span>
+      </li>
+      <li>
+        <span class="notice-date">02 Sep</span>
+        <span class="notice-title">Last date to withdraw a course is 20 September</span>
+        <span class="badge badge-alert">Important</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-tint" id="events">
+  <div class="section-inner">
+    <h2 class="section-title">Upcoming events</h2>
+    <div class="event-grid">
+      <div class="event-item">
+        <span class="event-date"><strong>24</strong>Sep</span>
+        <div><h4>AI &amp; Careers Panel</h4><p>Auditorium — 2:00 PM</p></div>
+      </div>
+      <div class="event-item">
+        <span class="event-date"><strong>30</strong>Sep</span>
+        <div><h4>Software Engineering Expo</h4><p>Engineering Block — 10:00 AM</p></div>
+      </div>
+      <div class="event-item">
+        <span class="event-date"><strong>05</strong>Oct</span>
+        <div><h4>Admissions Open House</h4><p>Main Campus — 9:00 AM</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ADMISSIONS CTA ======================= -->
+<section class="section" id="admissions">
+  <div class="cta-band">
+    <div>
+      <h2>Ready to start your journey?</h2>
+      <p>Register a demo student account and see the dashboard, GPA calculator and AI assistant for yourself.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="register.html" class="btn btn-primary btn-lg">Register</a>
+      <a href="login.html" class="btn btn-outline-light btn-lg">Student Login</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER / CONTACT ======================= -->
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/university-logo.png" alt="University logo" class="brand-logo" onerror="this.style.display='none'">
+      <p>UniMate AI<br><span>Your University. Your Assistant. Your Future.</span></p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#notices">Notices</a>
+      <a href="#events">Events</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Portal</h5>
+      <a href="login.html">Student Login</a>
+      <a href="register.html">Register</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact (demo)</h5>
+      <p>info@unimate-demo.edu.pk</p>
+      <p>+92 51 000 0000</p>
+      <p>Islamabad, Pakistan</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 UniMate AI — student hackathon project. Not affiliated with any university's official system. All data shown is sample data.</p>
+  </div>
+</footer>
+
+<script src="script/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Put your real university logo file here and rename it to:
+
+    university-logo.png
+
+Recommended: square or near-square PNG, transparent background,
+at least 200x200px. The header shows it at 40x40px and the footer
+at 40x40px, so it will be scaled down — it does not need to be huge.
+
+Until you add the real file, the page will simply hide the broken
+image icon (this is handled by the onerror="this.style.display='none'"
+attribute on the <img> tags in index.html), so the layout still looks
+fine without it.

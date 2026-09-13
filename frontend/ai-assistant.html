@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniMate AI Assistant</title>
+    <link rel="stylesheet" href="css/ai-assistant.css">
+</head>
+<body class="theme-chat">
+
+    <div class="ai-app">
+
+        <header class="ai-header">
+            <div class="ai-brand">
+                <button class="mobile-sidebar-button" id="openToolsSidebar" aria-label="Open tools sidebar">☰</button>
+                <div class="brand-logo">U</div>
+                <div>
+                    <h1>UniMate AI</h1>
+                    <p>Smart Student Assistant</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="dashboard.html" class="back-dashboard">← Dashboard</a>
+                <div class="student-avatar" id="studentAvatar">U</div>
+                <button class="mobile-sidebar-button" id="openHistorySidebarMobile" aria-label="Open chat history sidebar">🕘</button>
+            </div>
+        </header>
+
+        <main class="ai-workspace">
+
+            <aside class="tools-sidebar" id="toolsSidebar">
+                <div class="tools-heading">
+                    <div>
+                        <span>AI WORKSPACE</span>
+                        <h2>AI Tools</h2>
+                    </div>
+                    <button class="sidebar-close-btn" id="closeToolsSidebar" aria-label="Close tools sidebar">✕</button>
+                </div>
+
+                <div class="tools-list">
+                    <button class="tool-button active" data-tool="chat" type="button">
+                        <span class="tool-icon">💬</span>
+                        <span class="tool-text"><strong>AI Chat</strong><small>Ask anything</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="viva" type="button">
+                        <span class="tool-icon">🗣️</span>
+                        <span class="tool-text"><strong>Viva Coach</strong><small>Practice questions</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="course-map" type="button">
+                        <span class="tool-icon">🧩</span>
+                        <span class="tool-text"><strong>Course Map</strong><small>Prerequisites</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="deadlines" type="button">
+                        <span class="tool-icon">🔔</span>
+                        <span class="tool-text"><strong>Deadline Assistant</strong><small>Important dates</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="documents" type="button">
+                        <span class="tool-icon">📄</span>
+                        <span class="tool-text"><strong>Document Assistant</strong><small>Forms and applications</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="career" type="button">
+                        <span class="tool-icon">🧭</span>
+                        <span class="tool-text"><strong>Career Advisor</strong><small>Career direction</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="internships" type="button">
+                        <span class="tool-icon">💼</span>
+                        <span class="tool-text"><strong>Internship Matcher</strong><small>Find opportunities</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="roadmap" type="button">
+                        <span class="tool-icon">🚀</span>
+                        <span class="tool-text"><strong>Roadmap Generator</strong><small>Build your roadmap</small></span>
+                    </button>
+
+                    <button class="tool-button" data-tool="journey" type="button">
+                        <span class="tool-icon">🧭</span>
+                        <span class="tool-text"><strong>My Academic Journey</strong><small>Understand progress</small></span>
+                    </button>
+                </div>
+            </aside>
+
+            <button class="sidebar-handle sidebar-handle-left" id="openToolsHandle" aria-label="Open tools sidebar">›</button>
+
+            <section class="ai-content">
+                <div class="content-top">
+                    <div>
+                        <span class="tool-label" id="selectedToolLabel">AI CHAT</span>
+                        <h2 id="selectedToolTitle">Your Personal AI Academic Assistant</h2>
+                        <p id="selectedToolDescription">
+                            Ask questions about your courses, CGPA, university life and academic progress.
+                        </p>
+                    </div>
+
+                    <div class="ai-status">
+                        <span></span>
+                        AI Workspace
+                    </div>
+                </div>
+
+                <div class="welcome-card" id="welcomeCard">
+                    <div class="welcome-icon">🤖</div>
+                    <h3 id="welcomeTitle">Hello! How can I help you today?</h3>
+                    <p id="welcomeDescription">Ask UniMate AI about your academic record, courses, CGPA or university-related questions.</p>
+
+                    <div class="suggestion-list" id="suggestionList">
+                        <button type="button" class="suggestion-button">How can I improve my CGPA?</button>
+                        <button type="button" class="suggestion-button">Explain my remaining courses.</button>
+                        <button type="button" class="suggestion-button">What should I study first?</button>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages"></div>
+
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <textarea id="aiInput" rows="1" placeholder="Ask UniMate AI..."></textarea>
+                        <button id="sendButton" type="button" aria-label="Send message" disabled>➤</button>
+                    </div>
+
+                    <div class="input-footer">
+                        <span id="inputHint">Your AI assistant is ready.</span>
+                        <span>UniMate AI</span>
+                    </div>
+                </div>
+            </section>
+
+            <button class="sidebar-handle sidebar-handle-right" id="openHistoryHandle" aria-label="Open chat history sidebar">‹</button>
+
+            <aside class="history-sidebar" id="historySidebar">
+                <div class="sidebar-heading">
+                    <div>
+                        <span class="sidebar-label">YOUR CHATS</span>
+                        <h3 id="historyTitle">AI Chat History</h3>
+                    </div>
+
+                    <button class="sidebar-close-btn" id="closeHistorySidebar" aria-label="Close chat history sidebar">✕</button>
+                </div>
+
+                <button class="new-chat-button" id="newChatButton" type="button">
+                    <span>＋</span>
+                    New Conversation
+                </button>
+
+                <div class="history-list" id="historyList"></div>
+            </aside>
+        </main>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="script/ai-assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+
+# .NET build files
+**/bin/
+**/obj/
+
+# User Secrets
+secrets.json
+appsettings.Development.json
+
+# SQLite database
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Accidental duplicate backend
+backend/UniMateAI.Api/backend/

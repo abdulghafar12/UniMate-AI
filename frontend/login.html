@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniMate AI | Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #f5f8fc;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 430px;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+            border: 1px solid #e5e7eb;
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo-area img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        .logo-area h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #0b3d91;
+        }
+
+        .logo-area p {
+            margin: 7px 0 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .login-card h2 {
+            margin: 0 0 7px;
+            font-size: 23px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #0b3d91;
+            box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.10);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 70px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            color: #0b3d91;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .login-btn {
+            width: 100%;
+            border: none;
+            border-radius: 9px;
+            padding: 14px;
+            background: #0b3d91;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 5px;
+        }
+
+        .login-btn:hover {
+            background: #082f70;
+        }
+
+        .login-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .register-link a {
+            color: #0b3d91;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-home a {
+            color: #475569;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+
+            .login-card {
+                padding: 25px 20px;
+            }
+
+            .logo-area img {
+                width: 65px;
+                height: 65px;
+            }
+
+            .logo-area h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="login-wrapper">
+
+        <section class="login-card">
+
+            <div class="logo-area">
+
+                <img
+                    src="images/university-logo.png"
+                    alt="University Logo"
+                    onerror="this.style.display='none'"
+                >
+
+                <h1>UniMate AI</h1>
+
+                <p>
+                    AI-Powered University Management & Student Assistant
+                </p>
+
+            </div>
+
+            <h2>Welcome Back</h2>
+
+            <p class="subtitle">
+                Sign in to access your student dashboard.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="identifier">
+                        University Email or Registration Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="identifier"
+                        placeholder="e.g. abc@university.edu.pk"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="togglePassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Sign In
+                </button>
+
+            </form>
+
+            <div class="register-link">
+                Don't have an account?
+                <a href="register.html">Create Account</a>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html">← Back to Home</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        const password =
+            document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+                togglePassword.textContent = "Hide";
+
+            } else {
+
+                password.type = "password";
+                togglePassword.textContent = "Show";
+
+            }
+
+        });
+    </script>
+
+    <script src="script/login.js"></script>
+
+</body>
+</html>

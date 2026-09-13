@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>ac994f59-7a9d-47f8-8fab-b84e2c0ada54</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.10" />
+
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+  </ItemGroup>
+
+  <!-- Ignore the accidental duplicate backend project -->
+  <ItemGroup>
+    <Compile Remove="backend\UniMateBackend\**" />
+    <EmbeddedResource Remove="backend\UniMateBackend\**" />
+    <Content Remove="backend\UniMateBackend\**" />
+    <None Remove="backend\UniMateBackend\**" />
+  </ItemGroup>
+
+  <!-- Explicitly include the real database context -->
+  <ItemGroup>
+    <Compile Remove="Data\UniMateDbContext.cs" />
+    <Compile Include="Data\UniMateDbContext.cs" />
+  </ItemGroup>
+
+</Project>
