@@ -13,7 +13,7 @@ Directory.CreateDirectory(dataDirectory);
 var dbPath = Path.Combine(dataDirectory, "unimate.db");
 builder.Configuration["ConnectionStrings:UniMateDatabase"] = $"Data Source={dbPath}";
 
-builder.WebHost.UseUrls("http://127.0.0.1:5001");
+builder.WebHost.UseUrls($"http://0.0.0.0:{Environment.GetEnvironmentVariable("PORT") ?? "5001"}");
 
 // Controllers
 builder.Services.AddControllers();
